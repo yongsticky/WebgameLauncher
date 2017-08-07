@@ -1,0 +1,23 @@
+#pragma once
+
+#define EV_BASE 100
+
+#define EV_WIN_CREATE (EV_BASE+1)		// 101
+#define EV_WIN_DESTROY (EV_BASE+2)		// 102
+#define EV_WIN_TIMER (EV_BASE+3)		// 103
+
+#define EV_DLG_INITDLG (EV_BASE+1)		// 101
+
+#define EV_WB_NAVIGATE (EV_BASE+1)		// 101
+#define EV_WB_NEWWINDOW3 (EV_BASE+2)	// 102
+#define EV_WB_DOCCMPLETE (EV_BASE+3)	// 103
+
+#define EV_BTN_CLICK (EV_BASE+1)		// 101
+
+#define EV_TRAYICON_LCLICK (EV_BASE+1)		// 101
+#define EV_TRAYICON_LDBCLICK (EV_BASE+2)	// 102
+#define EV_TRAYICON_RCLICK (EV_BASE+3)		// 103
+
+#define EV_MENU_SELECT (EV_BASE+1)			// 101
+
+#define EV_EDIT_KEYDOWN (EV_BASE+1)			// 102

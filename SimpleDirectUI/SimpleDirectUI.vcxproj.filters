@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="contol">
+      <UniqueIdentifier>{7afe815d-7d77-4b99-8488-1108b72e1f7c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="framework">
+      <UniqueIdentifier>{f5068d21-083c-45b2-8785-4223cb3862f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loader">
+      <UniqueIdentifier>{69c5dc5c-6dd1-49de-a68d-60b24b2f1940}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="objectx">
+      <UniqueIdentifier>{0354c565-2c9a-4921-94f7-2bb012a7ce78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="webbrowser">
+      <UniqueIdentifier>{5e7edf2a-8e9c-40d9-b100-79e57b0040f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="win32component">
+      <UniqueIdentifier>{a5b2e6bc-6dc0-4de1-8adf-8646f4c1e873}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="eventx">
+      <UniqueIdentifier>{949b2b90-928b-483a-87d9-dc9e80b95b4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="action">
+      <UniqueIdentifier>{fc858adb-8d24-40f0-a364-d952b0c9fe37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hostwindow">
+      <UniqueIdentifier>{62f8c7f2-3b7c-42b7-83a5-9f55d4be4a51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDef.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleDirectUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WebBrowserControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="TextControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="ImageControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="Control.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="Objectx.h">
+      <Filter>objectx</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectxCreator.h">
+      <Filter>objectx</Filter>
+    </ClInclude>
+    <ClInclude Include="NoScriptErrorAndUIHandler.h">
+      <Filter>webbrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="WebBrowserEvents.h">
+      <Filter>webbrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlAttribute.h">
+      <Filter>loader</Filter>
+    </ClInclude>
+    <ClInclude Include="EventId.h">
+      <Filter>eventx</Filter>
+    </ClInclude>
+    <ClInclude Include="BitmapLoader.h">
+      <Filter>loader</Filter>
+    </ClInclude>
+    <ClInclude Include="LayoutLoader.h">
+      <Filter>loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Component.h">
+      <Filter>win32component</Filter>
+    </ClInclude>
+    <ClInclude Include="Eventx.h">
+      <Filter>eventx</Filter>
+    </ClInclude>
+    <ClInclude Include="EventxDispatch.h">
+      <Filter>eventx</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32ContextMenu.h">
+      <Filter>win32component</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32TrayIcon.h">
+      <Filter>win32component</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32MenuItem.h">
+      <Filter>win32component</Filter>
+    </ClInclude>
+    <ClInclude Include="Action.h">
+      <Filter>eventx</Filter>
+    </ClInclude>
+    <ClInclude Include="ConditionAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="QuitApplicationAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="ShellOpenUrlAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowComponentAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowWindowAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="WBNavigateAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="EventxHandler.h">
+      <Filter>eventx</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowMessageDispatcher.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="EditControl.h">
+      <Filter>contol</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameHostWindow.h">
+      <Filter>hostwindow</Filter>
+    </ClInclude>
+    <ClInclude Include="HostWindow.h">
+      <Filter>hostwindow</Filter>
+    </ClInclude>
+    <ClInclude Include="PopupHostDialog.h">
+      <Filter>hostwindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32ComponentHostWindow.h">
+      <Filter>hostwindow</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>framework</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowControlAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseHoverLeaveTracker.h">
+      <Filter>hostwindow</Filter>
+    </ClInclude>
+    <ClInclude Include="WBCommandAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="SendMessageAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="CreateTimerAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+    <ClInclude Include="KillTimerAction.h">
+      <Filter>action</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="Control.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="ImageControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="TextControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="WebBrowserControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectxCreator.cpp">
+      <Filter>objectx</Filter>
+    </ClCompile>
+    <ClCompile Include="Objectx.cpp">
+      <Filter>objectx</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleDirectUI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="NoScriptErrorAndUIHandler.cpp">
+      <Filter>webbrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="WebBrowserEvents.cpp">
+      <Filter>webbrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlAttribute.cpp">
+      <Filter>loader</Filter>
+    </ClCompile>
+    <ClCompile Include="BitmapLoader.cpp">
+      <Filter>loader</Filter>
+    </ClCompile>
+    <ClCompile Include="LayoutLoader.cpp">
+      <Filter>loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Component.cpp">
+      <Filter>win32component</Filter>
+    </ClCompile>
+    <ClCompile Include="Eventx.cpp">
+      <Filter>eventx</Filter>
+    </ClCompile>
+    <ClCompile Include="EventxDispatch.cpp">
+      <Filter>eventx</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32ContextMenu.cpp">
+      <Filter>win32component</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32TrayIcon.cpp">
+      <Filter>win32component</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32MenuItem.cpp">
+      <Filter>win32component</Filter>
+    </ClCompile>
+    <ClCompile Include="Action.cpp">
+      <Filter>eventx</Filter>
+    </ClCompile>
+    <ClCompile Include="ConditionAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="QuitApplicationAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="ShellOpenUrlAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowComponentAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowWindowAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="WBNavigateAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="EventxHandler.cpp">
+      <Filter>eventx</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowMessageDispatcher.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="EditControl.cpp">
+      <Filter>contol</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameHostWindow.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="HostWindow.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="PopupHostDialog.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32ComponentHostWindow.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="_FrameWindow.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="_PopupDialog.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>framework</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowControlAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="MouseHoverLeaveTracker.cpp">
+      <Filter>hostwindow</Filter>
+    </ClCompile>
+    <ClCompile Include="WBCommandAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="SendMessageAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="CreateTimerAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="KillTimerAction.cpp">
+      <Filter>action</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{96A9F88C-50AC-4155-B0B4-EFA6771D47D9}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>SimpleDirectUI</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)/lib/$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)/lib/$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../tinyxml/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../lpng1626;../zlib-1.2.8;../tinyxml</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../tinyxml/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="BitmapLoader.h" />
+    <ClInclude Include="ButtonControl.h" />
+    <ClInclude Include="ConditionAction.h" />
+    <ClInclude Include="Control.h" />
+    <ClInclude Include="CreateTimerAction.h" />
+    <ClInclude Include="EditControl.h" />
+    <ClInclude Include="EventId.h" />
+    <ClInclude Include="Eventx.h" />
+    <ClInclude Include="EventxDispatch.h" />
+    <ClInclude Include="EventxHandler.h" />
+    <ClInclude Include="FrameHostWindow.h" />
+    <ClInclude Include="HostWindow.h" />
+    <ClInclude Include="ImageControl.h" />
+    <ClInclude Include="KillTimerAction.h" />
+    <ClInclude Include="LayoutControl.h" />
+    <ClInclude Include="LayoutLoader.h" />
+    <ClInclude Include="MessageDef.h" />
+    <ClInclude Include="MouseHoverLeaveTracker.h" />
+    <ClInclude Include="NoScriptErrorAndUIHandler.h" />
+    <ClInclude Include="Objectx.h" />
+    <ClInclude Include="ObjectxCreator.h" />
+    <ClInclude Include="PopupHostDialog.h" />
+    <ClInclude Include="QuitApplicationAction.h" />
+    <ClInclude Include="SendMessageAction.h" />
+    <ClInclude Include="ShellOpenUrlAction.h" />
+    <ClInclude Include="ShowComponentAction.h" />
+    <ClInclude Include="ShowControlAction.h" />
+    <ClInclude Include="ShowWindowAction.h" />
+    <ClInclude Include="SimpleDirectUI.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TextControl.h" />
+    <ClInclude Include="WBCommandAction.h" />
+    <ClInclude Include="WBNavigateAction.h" />
+    <ClInclude Include="WebBrowserControl.h" />
+    <ClInclude Include="WebBrowserEvents.h" />
+    <ClInclude Include="Win32Component.h" />
+    <ClInclude Include="Win32ComponentHostWindow.h" />
+    <ClInclude Include="Win32ContextMenu.h" />
+    <ClInclude Include="Win32MenuItem.h" />
+    <ClInclude Include="Win32TrayIcon.h" />
+    <ClInclude Include="WindowMessageDispatcher.h" />
+    <ClInclude Include="XmlAttribute.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="BitmapLoader.cpp" />
+    <ClCompile Include="ButtonControl.cpp" />
+    <ClCompile Include="ConditionAction.cpp" />
+    <ClCompile Include="Control.cpp" />
+    <ClCompile Include="CreateTimerAction.cpp" />
+    <ClCompile Include="EditControl.cpp" />
+    <ClCompile Include="Eventx.cpp" />
+    <ClCompile Include="EventxDispatch.cpp" />
+    <ClCompile Include="EventxHandler.cpp" />
+    <ClCompile Include="FrameHostWindow.cpp" />
+    <ClCompile Include="HostWindow.cpp" />
+    <ClCompile Include="ImageControl.cpp" />
+    <ClCompile Include="KillTimerAction.cpp" />
+    <ClCompile Include="LayoutControl.cpp" />
+    <ClCompile Include="LayoutLoader.cpp" />
+    <ClCompile Include="MouseHoverLeaveTracker.cpp" />
+    <ClCompile Include="NoScriptErrorAndUIHandler.cpp" />
+    <ClCompile Include="Objectx.cpp" />
+    <ClCompile Include="ObjectxCreator.cpp" />
+    <ClCompile Include="PopupHostDialog.cpp" />
+    <ClCompile Include="QuitApplicationAction.cpp" />
+    <ClCompile Include="SendMessageAction.cpp" />
+    <ClCompile Include="ShellOpenUrlAction.cpp" />
+    <ClCompile Include="ShowComponentAction.cpp" />
+    <ClCompile Include="ShowControlAction.cpp" />
+    <ClCompile Include="ShowWindowAction.cpp" />
+    <ClCompile Include="SimpleDirectUI.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TextControl.cpp" />
+    <ClCompile Include="WBCommandAction.cpp" />
+    <ClCompile Include="WBNavigateAction.cpp" />
+    <ClCompile Include="WebBrowserControl.cpp" />
+    <ClCompile Include="WebBrowserEvents.cpp" />
+    <ClCompile Include="Win32Component.cpp" />
+    <ClCompile Include="Win32ComponentHostWindow.cpp" />
+    <ClCompile Include="Win32ContextMenu.cpp" />
+    <ClCompile Include="Win32MenuItem.cpp" />
+    <ClCompile Include="Win32TrayIcon.cpp" />
+    <ClCompile Include="WindowMessageDispatcher.cpp" />
+    <ClCompile Include="XmlAttribute.cpp" />
+    <ClCompile Include="_FrameWindow.cpp" />
+    <ClCompile Include="_PopupDialog.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
