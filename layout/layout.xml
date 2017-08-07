@@ -1,0 +1,274 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<LayoutRoot>
+    <FrameHostWindow id="wnd.main" size="1042,645" minimizebox="true" layered="true" active="true">
+        <EventHandler interest="101">
+            <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="show" create="true" />
+			<CreateTimer timerid="1" elapse="6" />
+        </EventHandler>
+		<EventHandler interest="103">
+			<ShowControl show="show" controlid="main.layout:wb.main.page" />
+		</EventHandler>
+        <Layout id="main.layout">
+            <Layout id="main.content" pos="359,96" size="684,500">
+                <Image id="content.bkg" bitmap="bitmap.bkg" hitval="2" />
+                <Button id="content.min" pos="639,24" size="18,20" bitmap="bitmap.min,bitmap.min.hover">
+                    <EventHandler interest="101">
+                        <ShowWindow windowid="owner" show="minimize" />
+                    </EventHandler>
+                </Button>
+                <Button id="content.close" pos="660,22" size="20,22" bitmap="bitmap.close,bitmap.close.hover">
+                    <EventHandler interest="101">
+                        <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="hide" />
+                        <QuitApplication method="exitprocess"/>
+                    </EventHandler>
+                </Button>
+                <Button id="content.nav.index" pos="119,48" size="109,25" bitmap="bitmap.index,bitmap.index.hover">
+                    <EventHandler interest="101">
+                        <ShellOpenUrl page="http://sj.172le.com" browser="default" />
+                    </EventHandler>
+                </Button>
+                <Button id="content.nav.forum" pos="228,48" size="109,25" bitmap="bitmap.forum,bitmap.forum.hover">
+                    <EventHandler interest="101">
+                        <ShellOpenUrl page="http://www.172le.com/news.html" browser="default" />
+                    </EventHandler>
+                </Button>
+                <Button id="content.nav.recharge" pos="337,48" size="108,25" bitmap="bitmap.recharge,bitmap.recharge.hover">
+                    <EventHandler interest="101">
+                        <ShellOpenUrl page="http://sj.172le.com/pay/index/game_id/86.html" browser="default" />
+                    </EventHandler>
+                </Button>
+                <Button id="content.nav.service" pos="445,48" size="108,25" bitmap="bitmap.service,bitmap.service.hover">
+                    <EventHandler interest="101">
+                        <ShellOpenUrl page="http://www.172le.com/service.html" browser="default" />
+                    </EventHandler>
+                </Button>
+                <Image id="content.logo" pos="136,445" size="108,28" bitmap="bitmap.leba" hitval="2" />
+            </Layout>
+            <Image id="main.role" bitmap="bitmap.role" pos="20,0" size="389,645" hitval="2" />
+            <Image id="main.logo.main" bitmap="bitmap.logo.main" pos="589,40" size="217,86" hitval="2" />
+            <WebBrowser id="wb.main.page" pos="378,176" size="644,350" child="false" transacc="true" debug="false" visible="false" page="http://www.172le.com/client/wd/index/game_id/86/style/cq.html">
+                <EventHandler interest="101">                   
+                    <Condition condition="contain" str="from=miniloader" />
+                    <ShowWindow show="hide" windowid="wnd.main" showopt="deactive" />                    
+                    <ShowWindow show="show" windowid="wnd.game" showopt="active" />                    
+                    <WBNavigate windowid="wnd.game" wbid="game.layout:game.wb" fromdata="true" retval="-1" />
+                </EventHandler>
+                <EventHandler interest="103">
+                    <ShowControl show="show" controlid="owner" />
+					<KillTimer timerid="1" />
+                </EventHandler>
+            </WebBrowser>
+        </Layout>        
+    </FrameHostWindow>
+    <FrameHostWindow id="wnd.game" size="1050,820" maximizebox="true" minimizebox="true" minsize="833,545" showdefault="3" active="true">
+        <EventHandler interest="101">
+            <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="show" create="true" />
+        </EventHandler>  
+        <Layout id="game.layout">
+            <Image id="game.titlebar.left" pos="0,0" size="110,40" bitmap="bitmap.topleft" hitval="2" />
+            <Image id="game.titlebar.mid" pos="110,0" size="-219,40" bitmap="bitmap.topmid" fit="wrap" hitval="2" />
+            <Image id="game.titlebar.right" pos="-109,0" size="109,40" bitmap="bitmap.topright" hitval="2" />
+            <Image id="game.border.left" pos="0,40" size="3,-43" bitmap="bitmap.borderleft" fit="wrap" hitval="10" />
+            <Image id="game.border.right" pos="-3,40" size="-3,-43" bitmap="bitmap.borderright" fit="wrap" hitval="11" />
+            <Image id="game.border.bottom" pos="3,-3" size="-6,3" bitmap="bitmap.borderbottom" fit="wrap" hitval="15" />
+            <Image id="game.corner.leftbottom" pos="0,-3" size="3,3" bitmap="bitmap.cornerleft" hitval="16" />
+            <Image id="game.corner.rightbottom" pos="-3,-3" size="3,3" bitmap="bitmap.cornerright" hitval="17" />
+			<Image id="game.titlebar.logo" pos="4,5" size="35,30" bitmap="bitmap.logo.titlebar" hitval="2" />
+            <Button id="game.close" pos="-26,3" size="22,22" bitmap="bitmap.close2,bitmap.close2.hover">
+                <EventHandler interest="101">
+                    <ShowMessagebox windowid="dlg.msgbox" title="退出提示" message="您确定要退出游戏?" continue="1" />
+					<ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="hide" />
+                    <QuitApplication method="exitprocess" />
+                </EventHandler>
+            </Button>
+            <Button id="game.restore" pos="-50,3" size="22,22" bitmap="bitmap.restore,bitmap.restore.hover">
+                <EventHandler interest="101">
+                    <ShowWindow windowid="owner" show="restore" />
+                    <ShowControl show="hide" controlid="owner" />
+                    <ShowControl show="show" windowid="owner" controlid="game.layout:game.max" />
+                </EventHandler>
+            </Button>
+            <Button id="game.max" pos="-50,3" size="22,22" visible="false" bitmap="bitmap.max,bitmap.max.hover">
+                <EventHandler interest="101">
+                    <ShowWindow windowid="owner" show="max" />
+                    <ShowControl show="hide" controlid="owner" />
+                    <ShowControl show="show" windowid="owner" controlid="game.layout:game.restore" />
+                </EventHandler>
+            </Button>
+            <Button id="game.min" pos="-74,3" size="22,22" bitmap="bitmap.min2,bitmap.min2.hover">
+                <EventHandler interest="101">
+                    <ShowWindow windowid="owner" show="min" />
+                </EventHandler>
+            </Button>
+            <Button id="game.bosstray" pos="-98,3" size="22,22" bitmap="bitmap.bosstray,bitmap.bosstray.hover">
+                <EventHandler interest="101">
+                    <ShowWindow show="hide" windowid="owner" />
+                </EventHandler>
+            </Button>
+            <Button id="game.clean" pos="-166,14" size="43,14" bitmap="bitmap.clean">
+                <EventHandler interest="101">
+                    <DeleteInternetExplorerCache sync="false" />
+                </EventHandler>
+            </Button>
+            <Button id="game.bosskey" pos="-244,14" size="58,14" bitmap="bitmap.bosskey">
+                <EventHandler interest="101">                    
+                    <ShowWindow show="show" windowid="dlg.hotkey" showopt="active" parentid="owner" />
+                </EventHandler>
+            </Button>
+            <Button id="game.forum" pos="-307,14" size="43,15" bitmap="bitmap.forum2">
+                <EventHandler interest="101">
+                    <ShellOpenUrl  page="http://www.172le.com/news.html" browser="default" />
+                </EventHandler>               
+            </Button>
+            <Button id="game.index" pos="-371,14" size="44,15" bitmap="bitmap.index2">
+                <EventHandler interest="101">
+                    <ShellOpenUrl  page="http://sj.172le.com" browser="default" />
+                </EventHandler>
+            </Button>            
+            <Button id="game.recharge" pos="-436,14" size="45,15" bitmap="bitmap.recharge2">
+                <EventHandler interest="101">
+                    <ShellOpenUrl  page="http://sj.172le.com/pay/index/game_id/86.html" browser="default" />
+                </EventHandler>
+            </Button>
+            <Button id="game.refresh" pos="-502,14" size="46,15" bitmap="bitmap.refresh">
+                <EventHandler interest="101">
+                    <WBCommand cmd="refresh" windowid="owner" wbid="game.layout:game.wb" />
+                </EventHandler>
+            </Button>
+            <Text id="game.title" text="传奇世界" pos="45,4" size="120,32" face="楷体" color="128,128,128" alignment="left" valignment="center" height="14" hitval="2" />
+            <WebBrowser id="game.wb" pos="3,40" size="-6,-43" page="about:blank" child="true" debug="false">            
+				<EventHandler interest="102">
+					<Condition condition="contain" str="page_router.html?page=pay" />					
+					<ShellOpenUrl page="http://sj.172le.com/pay/index/game_id/86.html" browser="default" retval="-1"/>
+				</EventHandler>
+				<EventHandler interest="102">
+					<Condition condition="contain" str="act.niu.xunlei.com" />
+					<ShellOpenUrl page="http://sj.172le.com/game/article/content/id/874/game_id/86.html" browser="default" retval="-1"/>
+				</EventHandler>				
+			</WebBrowser>
+        </Layout>
+    </FrameHostWindow>
+    <PopupHostDialog id="dlg.hotkey" size="400,200">
+		<EventHandler interest="101">
+            <HotkeyConfigReader group="sj" key="bosskey" to="hotkey.layout:hotkey.edit" />
+        </EventHandler>  
+        <Layout id="hotkey.layout">
+            <Image id="hotkey.title.left" pos="0,0" size="15,27" bitmap="bitmap.title.left" hitval="2" />
+            <Image id="hotkey.title.mid" pos="15,0" size="-30,27" bitmap="bitmap.title.mid" fit="wrap" hitval="2" />
+            <Image id="hotkey.title.right" pos="-15,0" size="15,27" bitmap="bitmap.title.right" hitval="2" />
+            <Image id="hotkey.center" pos="4,27" size="-8,-28" color="18,10,3" hitval="2" />
+            <Image id="hotkey.border.left" pos="0,27" size="4,-31" bitmap="bitmap.border.left" fit="wrap" />
+            <Image id="hotkey.border.right" pos="-4,27" size="4,-31" bitmap="bitmap.border.right" fit="wrap" />
+            <Image id="hotkey.border.bottom" pos="4,-4" size="-8,4" bitmap="bitmap.border.bottom" fit="wrap" />
+            <Image id="hotkey.corner.leftbottom" pos="0,-4" size="4,4" bitmap="bitmap.corner.leftbottom" />
+            <Image id="hotkey.corner.rightbottom" pos="-4,-4" size="4,4" bitmap="bitmap.corner.rightbottom" />
+            <Button id="hotkey.title.close" pos="-18,4" size="16,16" bitmap="bitmap.close3,bitmap.close3.hover">
+                <EventHandler interest="101">
+                    <ShowWindow show="hide" windowid="dlg.hotkey" />
+                </EventHandler>
+            </Button>
+            <Text id="hotkey.desc" text="请输入老板键：" pos="28,92" size="120,18" color="255,255,255" face="楷体" alignment="left" valignment="center" height="14" />
+            <HotkeyEdit id="hotkey.edit" pos="128,90" size="140,18" child="true" />			
+            <Button id="hotkey.ok" pos="288,87" size="62,24" bitmap="bitmap.ok,bitmap.ok.hover">
+                <EventHandler interest="101">
+					<HotkeyConfigWriter group="sj" key="bosskey" from="hotkey.layout:hotkey.edit" />
+					<SendMessage windowid="wnd.win32component" message="2001" />
+					<ShowWindow show="hide" windowid="dlg.hotkey" />
+                </EventHandler>
+            </Button>
+        </Layout>
+    </PopupHostDialog>
+    <PopupHostDialog id="dlg.msgbox" size="400,200">		
+        <Layout id="msgbox.layout">
+            <Image id="msgbox.title.left" pos="0,0" size="15,27" bitmap="bitmap.title.left" hitval="2" />
+            <Image id="msgbox.title.mid" pos="15,0" size="-30,27" bitmap="bitmap.title.mid" fit="wrap" hitval="2" />
+            <Image id="msgbox.title.right" pos="-15,0" size="15,27" bitmap="bitmap.title.right" hitval="2" />
+            <Image id="msgbox.center" pos="4,27" size="-8,-28" color="18,10,3" hitval="2" />
+            <Image id="msgbox.border.left" pos="0,27" size="4,-31" bitmap="bitmap.border.left" fit="wrap" />
+            <Image id="msgbox.border.right" pos="-4,27" size="4,-31" bitmap="bitmap.border.right" fit="wrap" />
+            <Image id="msgbox.border.bottom" pos="4,-4" size="-8,4" bitmap="bitmap.border.bottom" fit="wrap" />
+            <Image id="msgbox.corner.leftbottom" pos="0,-4" size="4,4" bitmap="bitmap.corner.leftbottom" />
+            <Image id="msgbox.corner.rightbottom" pos="-4,-4" size="4,4" bitmap="bitmap.corner.rightbottom" />            
+            <Button id="msgbox.close" pos="-18,4" size="16,16" bitmap="bitmap.close3,bitmap.close3.hover">
+                <EventHandler interest="101">
+                    <ShowWindow show="hide" retcode="0"/>
+                </EventHandler>
+            </Button>
+            <Text id="msgbox.title" pos="2,4" size="120,18" color="255,255,255" face="楷体" alignment="left" valignment="center" height="14" hitval="2" />
+            <Text id="msgbox.message" pos="40,90" size="320,18" color="255,255,255" face="楷体" alignment="center" valignment="center" height="14" />            
+            <Button id="msgbox.yes" text="" pos="-156,-42" size="62,24" bitmap="bitmap.ok,bitmap.ok.hover" text-color="255,255,255">
+                <EventHandler interest="101">                    
+                    <ShowWindow show="hide" retcode="1" />
+                </EventHandler>
+            </Button>
+            <Button id="msgbox.no" text="" pos="-80,-42" size="62,24" bitmap="bitmap.cancel,bitmap.cancel.hover" text-color="255,255,255">
+                <EventHandler interest="101">                    
+                    <ShowWindow show="hide" retcode="0" />
+                </EventHandler>
+            </Button>
+        </Layout>
+    </PopupHostDialog>
+	<PopupHostDialog id="dlg.msgbox2" size="400,200">		
+        <Layout id="msgbox.layout">
+            <Image id="msgbox.title.left" pos="0,0" size="15,27" bitmap="bitmap.title.left" hitval="2" />
+            <Image id="msgbox.title.mid" pos="15,0" size="-30,27" bitmap="bitmap.title.mid" fit="wrap" hitval="2" />
+            <Image id="msgbox.title.right" pos="-15,0" size="15,27" bitmap="bitmap.title.right" hitval="2" />
+            <Image id="msgbox.center" pos="4,27" size="-8,-28" color="18,10,3" hitval="2" />
+            <Image id="msgbox.border.left" pos="0,27" size="4,-31" bitmap="bitmap.border.left" fit="wrap" />
+            <Image id="msgbox.border.right" pos="-4,27" size="4,-31" bitmap="bitmap.border.right" fit="wrap" />
+            <Image id="msgbox.border.bottom" pos="4,-4" size="-8,4" bitmap="bitmap.border.bottom" fit="wrap" />
+            <Image id="msgbox.corner.leftbottom" pos="0,-4" size="4,4" bitmap="bitmap.corner.leftbottom" />
+            <Image id="msgbox.corner.rightbottom" pos="-4,-4" size="4,4" bitmap="bitmap.corner.rightbottom" />            
+            <Button id="msgbox.close" pos="-18,4" size="16,16" bitmap="bitmap.close3,bitmap.close3.hover">
+                <EventHandler interest="101">
+                    <ShowWindow show="hide" windowid="dlg.msgbox" />
+                </EventHandler>
+            </Button>
+            <Text id="msgbox.title" pos="2,4" size="120,18" color="255,255,255" face="楷体" alignment="left" valignment="center" height="14" hitval="2" />
+            <Text id="msgbox.message" pos="40,90" size="320,18" color="255,255,255" face="楷体" alignment="center" valignment="center" height="14" />            
+            <Button id="msgbox.yes" text="" pos="169,-42" size="62,24" bitmap="bitmap.ok,bitmap.ok.hover" text-color="255,255,255">
+                <EventHandler interest="101">                    
+                    <ShowWindow show="hide" />
+                </EventHandler>
+            </Button>            
+        </Layout>
+    </PopupHostDialog>
+    <Win32ComponentHostWindow id="wnd.win32component">
+        <Win32TrayIcon id="win32.trayicon" icon="../images/cqsj.ico">
+            <EventHandler interest="102">
+                <ShowWindow windowid="wnd.main" show="auto" cmd="-1" />
+                <ShowWindow windowid="wnd.game" show="auto" cmd="-1" />
+            </EventHandler>
+			<EventHandler interest="103">
+				<ShowComponent windowid="wnd.win32component" componentid="win32.traymenu" show="show" />
+			</EventHandler>			
+        </Win32TrayIcon>
+		<Win32ContextMenu id="win32.traymenu" group="1">
+			<Win32MenuItem index="1" text="显示主窗口">
+				<EventHandler interest="101">
+                    <ShowWindow windowid="wnd.main" show="auto" cmd="-1" />
+                    <ShowWindow windowid="wnd.game" show="auto" cmd="-1" />
+				</EventHandler>
+			</Win32MenuItem>
+			<Win32MenuItem index="2" separator="true" />						
+			<Win32MenuItem index="3" text="退出">
+				<EventHandler interest="101">
+                    <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="hide" />
+					<QuitApplication method="exitprocess"/>
+				</EventHandler>
+			</Win32MenuItem>
+		</Win32ContextMenu>
+        <Win32Hotkey  verify="ET36MDK3" config-group="sj" config-key="bosskey"> 
+            <EventHandler interest="201">
+                <ShowWindow windowid="wnd.main" show="hide" />
+                <ShowWindow windowid="wnd.game" show="hide" />
+                <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="hide" />
+            </EventHandler>
+            <EventHandler interest="202">
+                <ShowWindow windowid="wnd.main" show="show" cmd="-1" />
+                <ShowWindow windowid="wnd.game" show="show" cmd="-1" />
+                <ShowComponent windowid="wnd.win32component" componentid="win32.trayicon" show="show" />
+            </EventHandler>
+        </Win32Hotkey>
+    </Win32ComponentHostWindow>
+</LayoutRoot>
