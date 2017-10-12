@@ -82,7 +82,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../tinyxml/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../tinyxml/;../3rd/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -110,7 +110,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../tinyxml/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../tinyxml/;../3rd/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -154,14 +154,15 @@
     <ClInclude Include="FrameHostWindow.h" />
     <ClInclude Include="HostWindow.h" />
     <ClInclude Include="ImageControl.h" />
+    <ClInclude Include="IXmlAttributeInsertFilter.h" />
     <ClInclude Include="KillTimerAction.h" />
     <ClInclude Include="LayoutControl.h" />
     <ClInclude Include="LayoutLoader.h" />
     <ClInclude Include="MessageDef.h" />
     <ClInclude Include="MouseHoverLeaveTracker.h" />
-    <ClInclude Include="NoScriptErrorAndUIHandler.h" />
     <ClInclude Include="Objectx.h" />
     <ClInclude Include="ObjectxCreator.h" />
+    <ClInclude Include="OleClientSiteImpl.h" />
     <ClInclude Include="PopupHostDialog.h" />
     <ClInclude Include="QuitApplicationAction.h" />
     <ClInclude Include="SendMessageAction.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="ShowWindowAction.h" />
     <ClInclude Include="SimpleDirectUI.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="StringLoader.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TextControl.h" />
     <ClInclude Include="WBCommandAction.h" />
@@ -204,9 +206,9 @@
     <ClCompile Include="LayoutControl.cpp" />
     <ClCompile Include="LayoutLoader.cpp" />
     <ClCompile Include="MouseHoverLeaveTracker.cpp" />
-    <ClCompile Include="NoScriptErrorAndUIHandler.cpp" />
     <ClCompile Include="Objectx.cpp" />
     <ClCompile Include="ObjectxCreator.cpp" />
+    <ClCompile Include="OleClientSiteImpl.cpp" />
     <ClCompile Include="PopupHostDialog.cpp" />
     <ClCompile Include="QuitApplicationAction.cpp" />
     <ClCompile Include="SendMessageAction.cpp" />
@@ -221,6 +223,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="StringLoader.cpp" />
     <ClCompile Include="TextControl.cpp" />
     <ClCompile Include="WBCommandAction.cpp" />
     <ClCompile Include="WBNavigateAction.cpp" />

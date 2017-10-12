@@ -91,13 +91,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../SimpleDirectUI/;../../AsynNetIo/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../SimpleDirectUI/;../../AsynNetIo/;../3rd/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\tinyxml\Debugtinyxml;../lib/$(Configuration)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>tinyxml.lib;AsynNetIo.lib;SimpleDirectUI.lib;Gdiplus.lib;Ws2_32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\tinyxml\Debugtinyxml;../lib/$(Configuration)/;../3rd/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tinyxml.lib;detours.lib;SimpleDirectUI.lib;Gdiplus.lib;Ws2_32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,7 +124,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>../SimpleDirectUI/;../../AsynNetIo/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../SimpleDirectUI/;../../AsynNetIo/;../3rd/include/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -132,8 +132,8 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>..\tinyxml\Releasetinyxml;../lib/$(Configuration)/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>tinyxml.lib;SimpleDirectUI.lib;Gdiplus.lib;Ws2_32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\tinyxml\Releasetinyxml;../lib/$(Configuration)/;../3rd/lib/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>tinyxml.lib;SimpleDirectUI.lib;detours.lib;Gdiplus.lib;Ws2_32.lib;Wininet.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -158,6 +158,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AppConfiger.h" />
+    <ClInclude Include="FileContentReplace.h" />
     <ClInclude Include="HotkeyConfigReader.h" />
     <ClInclude Include="HotkeyConfigWriter.h" />
     <ClInclude Include="DeleteInternetExplorerCache.h" />
@@ -174,6 +175,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AppConfiger.cpp" />
+    <ClCompile Include="FileContentReplace.cpp" />
     <ClCompile Include="HotkeyConfigReader.cpp" />
     <ClCompile Include="HotkeyConfigWriter.cpp" />
     <ClCompile Include="DeleteInternetExplorerCache.cpp" />

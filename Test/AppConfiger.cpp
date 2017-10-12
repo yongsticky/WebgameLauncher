@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "AppConfiger.h"
-#include "Shlobj.h"
 
 
 CAppConfiger* CAppConfiger::_instance = nullptr;
@@ -22,6 +21,13 @@ void CAppConfiger::write(const std::string & group, const std::string & key, con
 	}	
 }
 
+void CAppConfiger::write(const std::string& group, const std::string& key, int value)
+{
+	char buf[16];
+	_itoa(value, buf, 10);
+	write(group, key, buf);
+}
+
 std::string CAppConfiger::read(const std::string& group, const std::string& key, const std::string& default)
 {
 	if (!m_profile.empty())
@@ -34,21 +40,22 @@ std::string CAppConfiger::read(const std::string& group, const std::string& key,
 	return std::string();
 }
 
-void CAppConfiger::init()
+int CAppConfiger::read(const std::string & group, const std::string & key, int default)
 {
-	TCHAR szBuffer[MAX_PATH];
-
-	if (SHGetSpecialFolderPath(0, szBuffer, CSIDL_APPDATA, 0))
+	std::string ret = read(group, key, "");
+	if (ret.empty())
 	{
-		PathAppend(szBuffer, _T("172le"));
-		::CreateDirectory(szBuffer, 0);	
-		PathAppend(szBuffer, _T("conf.dat"));		
-		
-		USES_CONVERSION;
-		m_profile = CT2A(szBuffer);
-	}	
-	else
-	{
-		ATLASSERT(FALSE);
+		return default;
 	}
+
+	return atoi(ret.c_str());
+}
+
+void CAppConfiger::init()
+{	
+	char szConf[MAX_PATH];
+	::GetModuleFileNameA(NULL, szConf, MAX_PATH);
+	::PathAppendA(szConf, "..\\..\\conf.dat");		
+
+	m_profile = szConf;	
 }

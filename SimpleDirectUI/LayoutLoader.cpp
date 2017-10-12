@@ -7,6 +7,7 @@
 #include "Control.h"
 #include "Win32Component.h"
 #include "EventxHandler.h"
+#include "StringLoader.h"
 
 using namespace SDUI;
 
@@ -19,6 +20,13 @@ CLayoutLoader::CLayoutLoader()
 
 CLayoutLoader::~CLayoutLoader()
 {
+}
+
+bool CLayoutLoader::beforeInsert(std::string& name, std::string& value)
+{
+	value = CStringLoader::getInstance()->expandString(value.c_str());
+
+	return true;
 }
 
 bool CLayoutLoader::loadFromXml(const char* xmlFile)
@@ -152,7 +160,7 @@ int CLayoutLoader::_do(TiXmlElement* root, CObjectx** ppv)
 	}
 	
 	CXmlAttribute attr;
-	if (!attr.fromXmlElement(root))
+	if (!attr.fromXmlElement(root, this))
 	{
 		return 0;
 	}

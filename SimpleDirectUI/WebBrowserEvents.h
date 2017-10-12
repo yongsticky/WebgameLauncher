@@ -35,19 +35,13 @@ namespace SDUI
 
 		bool setOwner(CControl* owner);
 
-		void SetDebug(bool debug);
-
 	public:
 		void STDMETHODCALLTYPE OnBeforeNavigate2(IDispatch** ppDisp, VARIANT* vUrl, VARIANT* vFlags, VARIANT* vTargetFrameName, VARIANT* vPostData, VARIANT* vHeaders, VARIANT_BOOL* vbCancel);
 		void STDMETHODCALLTYPE OnNewWindow3(IDispatch** ppDisp, VARIANT_BOOL* vbCancel, LONG dwFlags, BSTR bstrUrlContext, BSTR bstrUrl);
 		void STDMETHODCALLTYPE OnDocumentComplete(IDispatch* pDisp, VARIANT* vUrl);
 
 	private:
-		CComObject<CNoScriptErrorAndUIHandler>* m_pHandlerObj;
-
-		CControl* m_owner;
-
-		bool m_debug;
+		CControl* m_owner;	
 	};
 
 

@@ -13,6 +13,7 @@ namespace SDUI
 		
 	class CLayoutLoader;
 	class CBitmapLoader;
+	class CStringLoader;
 
 
 	class Application
@@ -46,6 +47,7 @@ namespace SDUI
 				
 		CLayoutLoader* getLayoutLoader();
 		CBitmapLoader* getBitmapLoader();
+		CStringLoader* getStringLoader();
 
 	protected:
 		int _run();

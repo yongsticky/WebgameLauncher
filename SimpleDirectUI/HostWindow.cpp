@@ -86,14 +86,26 @@ void CHostWindow::toggle(int cmd, int retcode)
 {
 	HWND hwnd = getHwnd();
 
-	if (hwnd && IsWindowVisible(hwnd) && !IsIconic(hwnd))
+	if (hwnd)
 	{
-		hide(retcode);
+		if (!IsWindowVisible(hwnd))
+		{
+			show(cmd, false);
+		}
+		else if (IsIconic(hwnd))
+		{
+			show(SW_RESTORE, false);
+		}
+		else
+		{
+			hide(retcode);
+		}
+
 	}
 	else
 	{
-		show(cmd, false);
-	}
+		ATLASSERT(FALSE);
+	}	
 }
 
 bool CHostWindow::invalidate()

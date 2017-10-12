@@ -20,7 +20,10 @@ public:
 	}
 
 	void write(const std::string& group, const std::string& key, const std::string& value);
+	void write(const std::string& group, const std::string& key, int value);
+
 	std::string read(const std::string& group, const std::string& key, const std::string& default);
+	int read(const std::string& group, const std::string& key, int default);
 
 private:
 	void init();

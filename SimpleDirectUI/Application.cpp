@@ -3,6 +3,7 @@
 
 #include "LayoutLoader.h"
 #include "BitmapLoader.h"
+#include "StringLoader.h"
 
 
 using namespace SDUI;
@@ -62,6 +63,11 @@ CLayoutLoader* Application::getLayoutLoader()
 CBitmapLoader* Application::getBitmapLoader()
 {
 	return CBitmapLoader::getInstance();
+}
+
+CStringLoader * SDUI::Application::getStringLoader()
+{
+	return CStringLoader::getInstance();
 }
 
 int Application::_run()

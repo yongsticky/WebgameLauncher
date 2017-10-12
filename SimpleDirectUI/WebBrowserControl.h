@@ -7,6 +7,7 @@ namespace SDUI
 {
 
 	class CWebBrowserEvents;
+	class COleClientSiteImpl;
 
 	class CWebBrowserControl :
 		public CControl,
@@ -70,6 +71,7 @@ namespace SDUI
 		_CAcxHostWindow m_acxWindow;
 
 		CComPtr<IWebBrowser2> m_spWebBrowser;
+		CComObject<COleClientSiteImpl>* m_pOleClientSite;
 		CComObject<CWebBrowserEvents>* m_pDWebBrowserEventsObj;
 	};
 };

@@ -23,6 +23,7 @@ using namespace std;
 
 #include "XmlAttribute.h"
 #include "BitmapLoader.h"
+#include "StringLoader.h"
 #include "LayoutLoader.h"
 
 #include "QuitApplicationAction.h"

@@ -81,9 +81,6 @@
     <ClInclude Include="ObjectxCreator.h">
       <Filter>objectx</Filter>
     </ClInclude>
-    <ClInclude Include="NoScriptErrorAndUIHandler.h">
-      <Filter>webbrowser</Filter>
-    </ClInclude>
     <ClInclude Include="WebBrowserEvents.h">
       <Filter>webbrowser</Filter>
     </ClInclude>
@@ -180,6 +177,15 @@
     <ClInclude Include="KillTimerAction.h">
       <Filter>action</Filter>
     </ClInclude>
+    <ClInclude Include="OleClientSiteImpl.h">
+      <Filter>webbrowser</Filter>
+    </ClInclude>
+    <ClInclude Include="StringLoader.h">
+      <Filter>loader</Filter>
+    </ClInclude>
+    <ClInclude Include="IXmlAttributeInsertFilter.h">
+      <Filter>loader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -211,9 +217,6 @@
     </ClCompile>
     <ClCompile Include="SimpleDirectUI.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="NoScriptErrorAndUIHandler.cpp">
-      <Filter>webbrowser</Filter>
     </ClCompile>
     <ClCompile Include="WebBrowserEvents.cpp">
       <Filter>webbrowser</Filter>
@@ -313,6 +316,12 @@
     </ClCompile>
     <ClCompile Include="KillTimerAction.cpp">
       <Filter>action</Filter>
+    </ClCompile>
+    <ClCompile Include="OleClientSiteImpl.cpp">
+      <Filter>webbrowser</Filter>
+    </ClCompile>
+    <ClCompile Include="StringLoader.cpp">
+      <Filter>loader</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

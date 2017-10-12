@@ -1,13 +1,12 @@
 #include "stdafx.h"
 #include "WebBrowserEvents.h"
 #include "WebBrowserControl.h"
-#include "NoScriptErrorAndUIHandler.h"
 #include "Control.h"
 #include "Eventx.h"
 
 using namespace SDUI;
 
-CWebBrowserEvents::CWebBrowserEvents() : m_debug(false), m_owner(nullptr), m_pHandlerObj(NULL)
+CWebBrowserEvents::CWebBrowserEvents() : m_owner(nullptr)
 {
 }
 
@@ -18,9 +17,6 @@ CWebBrowserEvents::~CWebBrowserEvents()
 
 HRESULT CWebBrowserEvents::FinalConstruct()
 {	
-	CComObject<CNoScriptErrorAndUIHandler>::CreateInstance(&m_pHandlerObj);
-	m_pHandlerObj->AddRef();	
-
 	return S_OK;
 }
 
@@ -34,11 +30,6 @@ bool SDUI::CWebBrowserEvents::setOwner(CControl* owner)
 	m_owner = owner;
 
 	return true;
-}
-
-void CWebBrowserEvents::SetDebug(bool debug)
-{
-	m_debug = debug;
 }
 
 void CWebBrowserEvents::OnBeforeNavigate2(IDispatch** ppDisp, VARIANT* vUrl, VARIANT* vFlags, VARIANT* vTargetFrameName, VARIANT* vPostData, VARIANT* vHeaders, VARIANT_BOOL* vbCancel)
@@ -70,11 +61,6 @@ void SDUI::CWebBrowserEvents::OnNewWindow3(IDispatch** ppDisp, VARIANT_BOOL* vbC
 
 void CWebBrowserEvents::OnDocumentComplete(IDispatch* pDisp, VARIANT* vUrl)
 {	
-	if (!m_debug)
-	{		
-		m_pHandlerObj->SetHandler(pDisp);
-	}	
-
 	CEventx* pEvent = new CEventx(EV_WB_DOCCMPLETE, m_owner, NULL);
 	m_owner->dispatchEvent(pEvent);
 

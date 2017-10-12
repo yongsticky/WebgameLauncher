@@ -4,11 +4,14 @@
 #include <vector>
 #include <string>
 
+#include "IXmlAttributeInsertFilter.h"
+
 class TiXmlElement;
 
 namespace SDUI
 {
 
+	class CStringLoader;
 
 	class CXmlAttribute
 	{
@@ -17,6 +20,7 @@ namespace SDUI
 		~CXmlAttribute();
 
 		bool fromXmlElement(TiXmlElement* element);
+		bool fromXmlElement(TiXmlElement* element, IXmlAttributeInsertFilter* filter);
 		bool fromXmlAttribute(CXmlAttribute* attr, const char* prefix = nullptr);
 		bool getAttribute(const std::string& name, std::string& value);
 

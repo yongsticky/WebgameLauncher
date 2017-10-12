@@ -4,6 +4,8 @@ class TiXmlDocument;
 class TiXmlElement;
 
 
+#include "IXmlAttributeInsertFilter.h"
+
 namespace SDUI
 {
 
@@ -14,7 +16,7 @@ namespace SDUI
 	class CControl;
 	class CXmlAttribute;
 
-	class CLayoutLoader
+	class CLayoutLoader : public IXmlAttributeInsertFilter
 	{
 		CLayoutLoader();
 	public:
@@ -29,6 +31,9 @@ namespace SDUI
 
 			return s_layout;
 		}
+
+
+		bool beforeInsert(std::string& name, std::string& value);
 
 	public:
 		bool loadFromXml(const char* xmlFile);

@@ -2,7 +2,6 @@
 #include "XmlAttribute.h"
 #include "tinyxml.h"
 
-
 using namespace SDUI;
 
 
@@ -15,13 +14,40 @@ CXmlAttribute::~CXmlAttribute()
 }
 
 bool CXmlAttribute::fromXmlElement(TiXmlElement* element)
+{	
+	return fromXmlElement(element, NULL);
+}
+
+bool CXmlAttribute::fromXmlElement(TiXmlElement* element, IXmlAttributeInsertFilter* filter)
 {
 	if (element)
 	{
 		TiXmlAttribute* pAttr = element->FirstAttribute();
 		while (pAttr)
 		{
-			_setAttribute(pAttr->Name(), pAttr->Value());
+			const char* name = pAttr->Name();
+			const char* value = pAttr->Value();
+			if (name && value)
+			{
+				std::string v;
+				_utf8ToAnsi(value, v);
+
+				if (filter)
+				{
+					std::string _name(name);
+					std::string _value(v);
+					if (filter->beforeInsert(_name, _value))
+					{
+						m_attrs[_name] = _value.c_str();
+					}
+					
+				}
+				else
+				{
+					m_attrs[name] = v;
+				}
+				
+			}
 
 			pAttr = pAttr->Next();
 		}

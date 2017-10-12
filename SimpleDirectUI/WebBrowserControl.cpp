@@ -2,6 +2,7 @@
 #include "HostWindow.h"
 #include "WebBrowserControl.h"
 #include "WebBrowserEvents.h"
+#include "OleClientSiteImpl.h"
 #include "XmlAttribute.h"
 
 using namespace SDUI;
@@ -214,7 +215,6 @@ void SDUI::CWebBrowserControl::setDebug(bool debug)
 
 int CWebBrowserControl::onMessage(unsigned int message, unsigned int wparam, int lparam, bool& handled)
 {
-	//ATLTRACE("CWebBrowserControl::onMessage message=%d wparam=%d lparam=%d \n", message, wparam, lparam);
 	int lr = CControl::onMessage(message, wparam, lparam, handled);
 
 	if (m_child)
@@ -365,16 +365,41 @@ bool CWebBrowserControl::_initWebBrowserActiveX()
 		ATLVERIFY(SUCCEEDED(m_acxWindow.CreateControl(lpszName, 0, &spUnk)));
 
 		CoTaskMemFree(lpszName);
+				
 
 		ATLVERIFY(SUCCEEDED(m_acxWindow.QueryControl(&m_spWebBrowser)));
 		if (m_spWebBrowser)
 		{
-			CComObject<CWebBrowserEvents>::CreateInstance(&m_pDWebBrowserEventsObj);
-			m_pDWebBrowserEventsObj->setOwner(this);
-			m_pDWebBrowserEventsObj->SetDebug(m_debug);
-			m_pDWebBrowserEventsObj->AddRef();
+			ATLVERIFY(SUCCEEDED(CComObject<CWebBrowserEvents>::CreateInstance(&m_pDWebBrowserEventsObj)));
+			if (m_pDWebBrowserEventsObj)
+			{
+				m_pDWebBrowserEventsObj->setOwner(this);
+				m_pDWebBrowserEventsObj->AddRef();
 
-			ATLVERIFY(SUCCEEDED(m_pDWebBrowserEventsObj->DispEventAdvise(m_spWebBrowser)));
+				ATLVERIFY(SUCCEEDED(m_pDWebBrowserEventsObj->DispEventAdvise(m_spWebBrowser)));
+			}			
+
+			if (!m_debug)
+			{
+				CComObject<COleClientSiteImpl>* pSite = NULL;
+				ATLVERIFY(SUCCEEDED(CComObject<COleClientSiteImpl>::CreateInstance(&pSite)));
+				if (pSite)
+				{
+					pSite->AddRef();
+
+					CComPtr<IOleObject> spOleObject = NULL;
+					ATLVERIFY(SUCCEEDED(m_spWebBrowser->QueryInterface(IID_IOleObject, (void**)&spOleObject)));
+					if (spOleObject)
+					{
+						CComPtr<IOleClientSite> spOleClientSite = NULL;
+						ATLVERIFY(SUCCEEDED(pSite->QueryInterface(IID_IOleClientSite, (void**)&spOleClientSite)));
+						if (spOleClientSite)
+						{
+							ATLVERIFY(SUCCEEDED(spOleObject->SetClientSite(spOleClientSite)));
+						}						
+					}					
+				}				
+			}		
 
 			return true;
 		}

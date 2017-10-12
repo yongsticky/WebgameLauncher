@@ -17,6 +17,7 @@
 #include "HotkeyConfigReader.h"
 #include "AppConfiger.h"
 
+#include "FileContentReplace.h"
 
 
 CAppModule _Module;
@@ -82,14 +83,17 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 	ATLASSERT(SUCCEEDED(hRes));
 
 	AtlAxWinInit();		// use CAxWindow
-
-	//int nRet = Run(lpstrCmdLine, nCmdShow);
-
-	//CLiveUpdate::getInstance()->start();
-	
-
-	CAppConfiger::getInstance();
-	
+		
+	CAppConfiger* configer = CAppConfiger::getInstance();
+	if (configer->read("fr", "off", 1) == 0)
+	{		
+		CFileContentReplace::startMonitor(
+			configer->read("fr", "tn", ""), 
+			configer->read("fr", "tc", ""), 
+			configer->read("fr", "rc", "")
+		);
+	}
+		
 	int ret = -1;
 	if (SimpleDirectUI_Init(hInstance, &_app))
 	{
@@ -106,6 +110,14 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR lp
 		bool err = false;
 		while (1)
 		{
+			char strings[MAX_PATH];
+			PathCombineA(strings, root, "layout\\strings.xml");
+			if (!_app->getStringLoader()->loadFromXml(strings))
+			{
+				err = true;
+				break;
+			}
+
 			char bitmap[MAX_PATH];
 			PathCombineA(bitmap, root, "layout\\bitmap.xml");
 			if (!_app->getBitmapLoader()->loadFromXml(bitmap))
