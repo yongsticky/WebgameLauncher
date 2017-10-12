@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<StringRoot>
+	<String id="url.site" value="http://www.592le.com" expand="false" />
+	<String id="name.game" value="魔域永恒" expand="false" />
+	<String id="pinyin.game" value="myyh" expand="false" />	
+    <String id="id.game" value="310940" expand="false" />
+	<String id="url.home" value="${url.site}/game.html?game_id=${id.game}" />
+	<String id="url.pay" value="${url.site}/pay/index/game_id/${id.game}.html" />
+	<String id="url.news" value="${url.site}/game/article/lists/cid/2/game_id/${id.game}.html" />
+	<String id="url.service" value="${url.site}/service.html" />
+	<String id="url.client" value="${url.site}/client/wd/index/game_id/${id.game}/style/cl.html" />	
+</StringRoot>

@@ -1,64 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <BitmapRoot rootdir="..\images\">
-    <BitmapList file="ui.png">        
-        <Bitmap id="bitmap.index" pos="0,0" size="109,25" />
-        <Bitmap id="bitmap.index.hover" pos="0,25" size="109,25" />
-        <Bitmap id="bitmap.forum" pos="109,0" size="109,25" />
-        <Bitmap id="bitmap.forum.hover" pos="109,25" size="109,25" />
-        <Bitmap id="bitmap.recharge" pos="218,0" size="108,25" />
-        <Bitmap id="bitmap.recharge.hover" pos="218,25" size="108,25" />
-        <Bitmap id="bitmap.service" pos="326,0" size="108,25" />
-        <Bitmap id="bitmap.service.hover" pos="326,25" size="108,25" />
-        <Bitmap id="bitmap.close" pos="434,0" size="20,22" />
-        <Bitmap id="bitmap.close.hover" pos="434,22" size="20,22" />
-        <Bitmap id="bitmap.min" pos="454,0" size="18,20" />
-        <Bitmap id="bitmap.min.hover" pos="454,20" size="18,20" />
+    <BitmapList file="frame.png">
+        <Bitmap id="bitmap.frame.refresh" pos="0,0" size="48,22" />
+		<Bitmap id="bitmap.frame.refresh.hover" pos="0,22" size="48,22" />
+		<Bitmap id="bitmap.frame.recharge" pos="48,0" size="48,22" />
+		<Bitmap id="bitmap.frame.recharge.hover" pos="48,22" size="48,22" />
+		<Bitmap id="bitmap.frame.home" pos="96,0" size="48,22" />
+		<Bitmap id="bitmap.frame.home.hover" pos="96,22" size="48,22" />
+		<Bitmap id="bitmap.frame.forum" pos="144,0" size="48,22" />
+		<Bitmap id="bitmap.frame.forum.hover" pos="144,22" size="48,22" />
+		<Bitmap id="bitmap.frame.bosskey" pos="192,0" size="62,22" />
+		<Bitmap id="bitmap.frame.bosskey.hover" pos="192,22" size="62,22" />
+		<Bitmap id="bitmap.frame.clean" pos="254,0" size="48,22" />
+		<Bitmap id="bitmap.frame.clean.hover" pos="254,22" size="48,22" />		
+		<Bitmap id="bitmap.frame.totray" pos="0,48" size="24,24" />
+		<Bitmap id="bitmap.frame.totray.hover" pos="120,48" size="24,24" />
+		<Bitmap id="bitmap.frame.restore" pos="24,48" size="24,24" />
+		<Bitmap id="bitmap.frame.restore.hover" pos="144,48" size="24,24" />
+		<Bitmap id="bitmap.frame.max" pos="48,48" size="24,24" />
+		<Bitmap id="bitmap.frame.max.hover" pos="168,48" size="24,24" />
+		<Bitmap id="bitmap.frame.min" pos="72,48" size="24,24" />
+		<Bitmap id="bitmap.frame.min.hover" pos="192,48" size="24,24" />		
+		<Bitmap id="bitmap.frame.close" pos="96,48" size="24,24" />
+		<Bitmap id="bitmap.frame.close.hover" pos="216,48" size="24,24" />
+		<Bitmap id="bitmap.frame.left" pos="240,48" size="19,36" />
+		<Bitmap id="bitmap.frame.mid" pos="259,48" size="5,36" />
+		<Bitmap id="bitmap.frame.right" pos="259,48" size="19,36" />	
     </BitmapList>
-    <BitmapList file="ui2.png">
-        <Bitmap id="bitmap.topleft" pos="0,0" size="110,40" />
-        <Bitmap id="bitmap.topmid" pos="218,0" size="9,40" />
-        <Bitmap id="bitmap.topright" pos="109,0" size="109,40" />
-        <Bitmap id="bitmap.borderleft" pos="178,62" size="3,4" />
-        <Bitmap id="bitmap.borderright" pos="181,62" size="3,4" />
-        <Bitmap id="bitmap.borderbottom" pos="190,62" size="1,3" />
-        <Bitmap id="bitmap.cornerleft" pos="184,62" size="3,3" />
-        <Bitmap id="bitmap.cornerright" pos="187,62" size="3,3" />
-        <Bitmap id="bitmap.min2" pos="22,40" size="22,22" />
-        <Bitmap id="bitmap.min2.hover" pos="110,40" size="22,22" />
-        <Bitmap id="bitmap.close2" pos="66,40" size="22,22" />
-        <Bitmap id="bitmap.close2.hover" pos="154,40" size="22,22" />
-        <Bitmap id="bitmap.restore" pos="44,40" size="22,22" />
-        <Bitmap id="bitmap.restore.hover" pos="132,40" size="22,22" />
-        <Bitmap id="bitmap.max" pos="198,40" size="22,22" />
-        <Bitmap id="bitmap.max.hover" pos="176,40" size="22,22" />
-        <Bitmap id="bitmap.bosstray" pos="0,40" size="22,22" />
-        <Bitmap id="bitmap.bosstray.hover" pos="88,40" size="22,22" />
-        <Bitmap id="bitmap.refresh" pos="0,63" size="46,15" />
-        <Bitmap id="bitmap.recharge2" pos="46,63" size="45,15" />
-        <Bitmap id="bitmap.index2" pos="91,63" size="44,15" />
-        <Bitmap id="bitmap.forum2" pos="135,63" size="43,15" />
-        <Bitmap id="bitmap.bosskey" pos="0,78" size="58,14" />
-        <Bitmap id="bitmap.clean" pos="58,78" size="43,14" />
+    <BitmapList file="buttons.png">
+        <Bitmap id="bitmap.button.home" pos="0,0" size="100,38" />
+		<Bitmap id="bitmap.button.home.hover" pos="101,0" size="100,38" />
+		<Bitmap id="bitmap.button.forum" pos="0,38" size="100,38" />
+		<Bitmap id="bitmap.button.forum.hover" pos="101,38" size="100,38" />
+		<Bitmap id="bitmap.button.recharge" pos="0,76" size="100,38" />
+		<Bitmap id="bitmap.button.recharge.hover" pos="101,76" size="100,38" />
+		<Bitmap id="bitmap.button.service" pos="0,114" size="100,38" />
+		<Bitmap id="bitmap.button.service.hover" pos="101,114" size="100,38" />
+		<Bitmap id="bitmap.button.min" pos="47,152" size="20,20" />
+		<Bitmap id="bitmap.button.min.hover" pos="47,172" size="20,20" />
+		<Bitmap id="bitmap.button.close" pos="67,152" size="20,20" />		
+		<Bitmap id="bitmap.button.close.hover" pos="67,172" size="20,20" />
     </BitmapList>
-    <BitmapList file="ui3.png">        
-        <Bitmap id="bitmap.close3" pos="45,24" size="16,16" />
-        <Bitmap id="bitmap.close3.hover" pos="45,40" size="16,16" />
-        <Bitmap id="bitmap.title.left" pos="0,24" size="15,27" />
-        <Bitmap id="bitmap.title.mid" pos="15,24" size="15,27" />
-        <Bitmap id="bitmap.title.right" pos="30,24" size="15,27" />
-        <Bitmap id="bitmap.border.left" pos="9,51" size="4,1" />
-        <Bitmap id="bitmap.border.right" pos="9,52" size="4,1" />
-        <Bitmap id="bitmap.border.bottom" pos="8,51" size="1,4" />
-        <Bitmap id="bitmap.corner.leftbottom" pos="0,51" size="4,4" />
-        <Bitmap id="bitmap.corner.rightbottom" pos="4,51" size="4,4" />
-        <Bitmap id="bitmap.ok" pos="0,0" size="62,24" />
-        <Bitmap id="bitmap.ok.hover" pos="0,56" size="62,24" />
-        <Bitmap id="bitmap.cancel" pos="0,80" size="62,24" />
-        <Bitmap id="bitmap.cancel.hover" pos="0,104" size="62,24" />
+    <BitmapList file="msgbox.png">        
+        <Bitmap id="bitmap.msgbox.ok" pos="0,0" size="72,26" />
+		<Bitmap id="bitmap.msgbox.ok.hover" pos="72,0" size="72,26" />
+		<Bitmap id="bitmap.msgbox.cancel" pos="0,26" size="72,26" />
+		<Bitmap id="bitmap.msgbox.cancel.hover" pos="72,26" size="72,26" />		
+		<Bitmap id="bitmap.msgbox.caption.left" pos="0,52" size="13,23" />
+		<Bitmap id="bitmap.msgbox.caption.mid" pos="13,52" size="2,23" />
+		<Bitmap id="bitmap.msgbox.caption.right" pos="15,52" size="13,23" />
+		<Bitmap id="bitmap.msgbox.close" pos="28,52" size="19,18" />
+		<Bitmap id="bitmap.msgbox.close.hover" pos="46,52" size="19,18" />
+		<Bitmap id="bitmap.msgbox.title" pos="64,52" size="23,13" />		
     </BitmapList>
-	<Bitmap id="bitmap.bkg" size="684,501" file="bkg.png" />
-    <Bitmap id="bitmap.role" size="389,645" file="role.png" />    
-    <Bitmap id="bitmap.logo.main" size="217,86" file="logo_main.png" />
-	<Bitmap id="bitmap.logo.titlebar" size="217,86" file="logo_titlebar.png" />
-    <Bitmap id="bitmap.leba" size="108,28" file="leba.png" />
+	<Bitmap id="bitmap.bkg" size="744,481" file="bkg.png" />
+    <Bitmap id="bitmap.role" size="363,585" file="role.png" />
+	<Bitmap id="bitmap.logo.main" size="217,86" file="logo_main.png" />
+	<Bitmap id="bitmap.logo.titlebar" size="35,30" file="logo_titlebar.png" />
+    <Bitmap id="bitmap.592le" size="108,28" file="592le.png" />
 </BitmapRoot>
